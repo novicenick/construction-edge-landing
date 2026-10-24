@@ -41,7 +41,7 @@ export async function onRequest(context) {
       headers: {Accept: 'application/rss+xml, application/xml, text/xml'},
       signal: AbortSignal.timeout(10000), redirect: 'error',
     });
-    if (!response.ok) throw new Error('upstream_status');
+    if (!response.ok) throw new Error('upstream_status_' + response.status);
     const xml = await readBounded(response);
     if (!/<rss[\s>]/i.test(xml) || !/<channel[\s>]/i.test(xml) || !/<\/rss>\s*$/i.test(xml) || /<!DOCTYPE|<!ENTITY/i.test(xml)) throw new Error('invalid_feed');
     const fetchedAt = Date.now();
@@ -56,6 +56,7 @@ export async function onRequest(context) {
       const data = await cached.json();
       return respond(JSON.stringify({...data, stale: true}));
     }
-    return respond(JSON.stringify({error: 'feed_unavailable'}), 503);
+    const reason = /^(upstream_status_\d{3}|invalid_feed|feed_size)$/.test(error.message) ? error.message : error.name;
+    return respond(JSON.stringify({error: 'feed_unavailable', reason}), 503);
   }
 }

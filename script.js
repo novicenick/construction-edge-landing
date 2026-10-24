@@ -10,7 +10,3 @@ if (form) form.addEventListener('submit', event => {
   if (!form.reportValidity()) return;
   form.querySelector('.form-status').textContent = 'Preview complete. In the finished site, this enquiry would be delivered privately to David. Nothing has been sent or saved.';
 });
-const dialog = document.querySelector('#subscription-dialog');
-document.querySelectorAll('[data-subscribe-preview]').forEach(button => button.addEventListener('click', () => dialog.showModal()));
-dialog?.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => dialog.close()));
-dialog?.addEventListener('click', event => { if (event.target === dialog) { const b = dialog.getBoundingClientRect(); if (event.clientX < b.left || event.clientX > b.right || event.clientY < b.top || event.clientY > b.bottom) dialog.close(); } });

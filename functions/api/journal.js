@@ -39,7 +39,7 @@ export async function onRequest(context) {
   try {
     const response = await fetch(FEED, {
       headers: {Accept: 'application/rss+xml, application/xml, text/xml'},
-      signal: AbortSignal.timeout(10000), redirect: 'error',
+      signal: AbortSignal.timeout(10000), redirect: 'manual',
     });
     if (!response.ok) throw new Error('upstream_status_' + response.status);
     const xml = await readBounded(response);

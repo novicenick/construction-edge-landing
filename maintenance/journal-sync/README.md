@@ -6,7 +6,7 @@ Cloudflare Worker `construction-edge-journal-sync` refreshes the fixed public RS
 
 Only a validated, non-empty feed from this publication replaces `latest`. Records have no expiration. Empty/malformed/error responses retain the previous successful snapshot indefinitely. Successful refreshes reflect edits and removals in the current RSS feed; this is not a permanent archive of every post.
 
-The initial `latest` record was restored from the successful public feed retrieval on 24 October 2026, retaining its original fetchedAt timestamp. It contains the published welcome article, not unpublished editorial drafts. The UI labels snapshots older than two hours as saved articles.
+The initial `latest` record was restored from the successful public feed retrieval on 24 October 2026, retaining its original fetchedAt timestamp. It was then updated from a fresh validated public feed on 26 October 2026 (Sydney time), including David’s latest edits to the welcome article. It contains only published content, not unpublished editorial drafts. The UI labels snapshots older than two hours as saved articles.
 
 Storage namespace: `ede7c679582549c0ac14f80c869795c6` (construction-edge-journal).
 

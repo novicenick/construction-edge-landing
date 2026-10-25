@@ -104,7 +104,7 @@ async function loadJournal() {
         document.querySelector('.article-aside').hidden=true;
       } else renderArticle(post);
     }
-    statuses.forEach(s => { s.textContent = data.stale ? 'Showing a recent copy while Substack is unavailable. Visit Substack for the latest updates.' : ''; });
+    statuses.forEach(s => { s.textContent = data.stale ? 'Showing saved articles while we check for updates. Visit Substack for the latest posts.' : ''; });
   } catch {
     statuses.forEach(s => { s.textContent='The articles could not be loaded right now. You can still read them on Substack.'; });
     containers.forEach(c => c.replaceChildren(externalLink('Read The Construction Edge ↗',PUBLICATION)));

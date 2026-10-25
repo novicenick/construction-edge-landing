@@ -1,0 +1,18 @@
+{
+  "main_module": "worker.mjs",
+  "compatibility_date": "2026-10-25",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "bindings": [
+    {
+      "type": "kv_namespace",
+      "name": "JOURNAL",
+      "namespace_id": "ede7c679582549c0ac14f80c869795c6"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

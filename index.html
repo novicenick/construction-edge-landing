@@ -1,33 +1,65 @@
 <!doctype html>
 <html lang="en-AU">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Construction Edge Advisory | Better thinking. Better building.</title>
-  <meta name="description" content="Independent construction industry advice led by David Chandler AM, an experienced practitioner across the private and public sectors. Our new website is coming soon.">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Construction Edge Advisory | A better way to build</title>
+  <meta name="description" content="Independent advice led by David Chandler AM. Industry experience across housing, urban renewal, health and major projects, with perspectives on quality, productivity and better housing delivery.">
   <meta name="theme-color" content="#1b365d">
   <link rel="canonical" href="https://constructionedge.com.au/">
   <link rel="icon" type="image/svg+xml" href="assets/ce-mark-colour.svg">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script src="journal.js" defer></script>
 </head>
 <body>
-  <header class="site-header wrap">
-    <img class="brand" src="assets/ce-advisory-colour.svg" alt="CE Advisory — Construction Edge" width="232" height="54">
-    <p class="site-status"><span aria-hidden="true"></span> New website coming soon</p>
-  </header>
-  <main class="hero wrap">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap">
+  <a class="brand" href="#top" aria-label="Construction Edge Advisory home"><img src="assets/ce-advisory-colour.svg" alt="CE Advisory" width="232" height="54"></a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">+</span></button>
+  <nav id="navigation" aria-label="Main navigation">
+    <a href="#expertise">Our expertise</a><a href="#david">David Chandler</a><a href="#journal">Essays</a><a class="nav-contact" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero wrap" id="top" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <p class="eyebrow">Construction industry advisory</p>
-      <h1>Better thinking.<br>Better <span>building.</span></h1>
-      <p class="lead">Expert advice for an industry<br class="desktop-break"> ready to move forward.</p>
-      <p class="description">Independent advice led by David Chandler AM, an industry practitioner with wide experience across the private and public sectors. Essential perspectives on quality, productivity, better housing delivery and construction enterprise business strategies.</p>
-      <div class="coming-soon"><span class="corner" aria-hidden="true"></span><p>A new home for Construction Edge.<br><span>More insights. A clearer way forward. Coming soon.</span></p></div>
+      <p class="eyebrow"><span class="status-dot"></span> Construction industry advisory</p>
+      <h1 id="hero-title">Better thinking.<br>Better <span class="green-word">building.</span></h1>
+      <p class="hero-lead">Expert advice for an industry ready to move forward.</p>
+      <p class="hero-description">Independent advice led by David Chandler AM, an industry practitioner with wide experience across the private and public sectors. Essential perspectives on quality, productivity, better housing delivery and construction enterprise business strategies.</p>
+      <div class="hero-actions"><a class="button" href="#contact">Discuss your challenge <span aria-hidden="true">↗</span></a><a class="text-link" href="#expertise">Explore our expertise <span aria-hidden="true">↓</span></a></div>
     </div>
     <figure class="hero-art">
       <img src="assets/built-perspective-cutaway.webp" alt="Cutaway illustration of a four-storey building showing its structural frame, exposed interiors and basement, in Construction Edge colours" width="1200" height="1299" fetchpriority="high">
-      <figcaption><span>Construction Edge</span><p>From industry insight<br>to practical progress.</p></figcaption>
+      <figcaption><span>CONSTRUCTION EDGE</span><span>From industry insight<br>to practical progress.</span></figcaption>
     </figure>
-  </main>
-  <footer class="site-footer wrap"><p>Construction Edge Advisory</p><p>Quality <span>/</span> Productivity <span>/</span> Better housing</p></footer>
-</body>
-</html>
+  </section>
+  <div class="audience-strip wrap"><span>Advice for those shaping what comes next</span><p>Developers & builders <i>/</i> Government & housing providers <i>/</i> Industry leaders</p></div>
+
+  <section class="expertise section wrap" id="expertise" aria-labelledby="expertise-title">
+    <div class="section-intro"><p class="eyebrow">01 / Our expertise</p><h2 id="expertise-title">Clarity on the <br>issues that matter.</h2><p>From the decisions made in the boardroom to the way work comes together on site, better outcomes start with asking better questions.</p><a class="text-link" href="#contact">Find the right starting point <span aria-hidden="true">↗</span></a></div>
+    <div class="services">
+      <details open><summary><span class="service-no">01</span><h3>Quality & confidence</h3><span class="expand" aria-hidden="true">+</span></summary><div class="service-body"><p>Put quality, accountability and the customer at the centre of delivery. An independent perspective on the practices, responsibilities and evidence that build confidence in a project.</p><p class="service-tags">Quality culture / Delivery risk / Customer outcomes</p></div></details>
+      <details><summary><span class="service-no">02</span><h3>Productivity & modern construction</h3><span class="expand" aria-hidden="true">+</span></summary><div class="service-body"><p>Look beyond individual technologies to how the whole delivery system works. Explore better coordination, off-site construction and supply-chain capability, with a focus on measurable improvements.</p><p class="service-tags">Delivery models / Off-site construction / Supply chains</p></div></details>
+      <details><summary><span class="service-no">03</span><h3>Housing delivery & industry strategy</h3><span class="expand" aria-hidden="true">+</span></summary><div class="service-body"><p>Connect housing ambition with the practical conditions needed to deliver. Test assumptions, identify barriers and develop approaches that bring policy, commercial realities and construction capability together.</p><p class="service-tags">Housing supply / Industry capability / Strategic direction</p></div></details>
+      <details><summary><span class="service-no">04</span><h3>Leadership & industry dialogue</h3><span class="expand" aria-hidden="true">+</span></summary><div class="service-body"><p>Bring an informed, direct voice to the conversations shaping construction. Strategic briefings, facilitated discussions and speaking engagements that challenge established thinking and focus attention on practical action.</p><p class="service-tags">Executive briefings / Roundtables / Conference speaking</p></div></details>
+    </div>
+  </section>
+
+  <section class="david-section" id="david" aria-labelledby="david-title"><div class="wrap david-grid">
+    <figure class="david-identity"><p class="eyebrow">02 / Led by experience</p><img class="david-portrait" src="assets/david-chandler-portrait.webp" alt="David Chandler AM smiling with his arms crossed, wearing a navy suit and glasses" width="900" height="1125" loading="lazy"><figcaption><h2 id="david-title">David Chandler <span class="honours">AM</span><span class="name-dot">.</span></h2><p class="role">Industry practitioner &amp; adviser<br><span>Inaugural NSW Building Commissioner</span></p></figcaption></figure>
+    <div class="david-copy"><h3>Experience across projects,<br>businesses and public service.</h3><p>Independent advice led by David Chandler AM, an industry practitioner with wide experience in the private and public sector in housing, urban renewal, health and major projects including as Construction Director for Australia’s New Parliament House.</p><p>David’s experiences have evolved from projects and businesses operating around the Asia Pacific Rim. He was the inaugural NSW Building Commissioner and the industry founder of the Centre for Smart Modern Construction at Western Sydney University.</p><p>He brings essential perspectives on quality, productivity and better housing delivery and construction enterprise business strategies.</p><p>He champions the theme of ‘what good looks like’ to help shape the capability and character of today’s constructors, who are now facing into a rapidly modernising industry.</p><div class="principle"><span>A guiding theme</span><p>What good looks like.</p></div><a href="#contact" class="text-link light">Talk with David <span aria-hidden="true">↗</span></a></div>
+  </div></section>
+
+  <section class="journal-section section wrap" id="journal" aria-labelledby="journal-title">
+    <div class="perspective-heading"><div><p class="eyebrow">03 / Latest essays</p><h2 id="journal-title">Ideas worth<br>building on.</h2></div><div class="journal-intro"><p>The latest essays from David’s Substack, The Construction Edge. Read, subscribe and join the conversation on Substack.</p><a class="text-link" href="https://theconstructionedge.substack.com/archive">View all essays on Substack <span aria-hidden="true">↗</span></a></div></div>
+<p class="feed-status" data-feed-status role="status">Loading David’s latest essays…</p>
+    <div class="live-essay-grid" data-journal-feed data-limit="4"></div>
+    <noscript><p><a href="https://theconstructionedge.substack.com/archive">Read David’s essays on Substack</a>.</p></noscript>
+  </section>
+  <section class="newsletter-section" id="subscribe"><div class="wrap newsletter-grid"><div><p class="eyebrow">The Construction Edge</p><h2>A longer view.<br>In your inbox.</h2><p>Essays, observations and ideas for a better construction industry. Written by David, delivered through Substack.</p></div><div class="subscribe-preview"><span class="substack-label">The Construction Edge on <strong>Substack</strong></span><h3>Stay close to the conversation.</h3><p>Subscribe to receive David’s new essays by email.</p><iframe class="substack-embed" src="https://theconstructionedge.substack.com/embed" title="Subscribe to The Construction Edge by David Chandler" width="480" height="320" loading="lazy"></iframe><a class="text-link light" href="https://theconstructionedge.substack.com/subscribe" target="_blank" rel="noopener noreferrer">Subscribe on Substack <span aria-hidden="true">↗</span></a><small>Subscriptions are managed by Substack. Enquiries are sent separately through the contact form.</small></div></div></section>
+
+  <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="wrap contact-grid"><div class="contact-intro"><p class="eyebrow">04 / Start a conversation</p><h2 id="contact-title">What needs <br>to change?</h2><p>Tell us about the decision, project or industry challenge in front of you. Let’s explore where an independent perspective could help.</p><p class="form-note">Your enquiry is processed by Formspree and emailed to Construction Edge. We’ll use your details to respond. Sending an enquiry does not subscribe you to the newsletter.</p></div><form id="contact-form" class="contact-form" action="https://formspree.io/f/mqppakkv" method="POST"><input type="hidden" name="subject" value="New enquiry — Construction Edge"><div class="form-row"><label>Your name<input name="name" autocomplete="name" required maxlength="100" placeholder="Name"></label><label>Your email<input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@organisation.com"></label></div><label>Organisation <span>(optional)</span><input name="organisation" autocomplete="organization" maxlength="160" placeholder="Organisation"></label><label>How can we help?<select name="topic" required><option value="">Select a topic</option><option>Quality & confidence</option><option>Productivity & modern construction</option><option>Housing delivery & strategy</option><option>Speaking & industry dialogue</option><option>Something else</option></select></label><label>Your message<textarea name="message" rows="4" required minlength="10" maxlength="4000" placeholder="A little context about your project or question…"></textarea></label><div class="form-submit"><button class="button" type="submit">Send enquiry <span aria-hidden="true">↗</span></button><span>Delivered by email<br>Confirmation via Formspree.</span></div><p class="form-status" role="status" aria-live="polite"></p></form></div></section>
+</main>
+<footer class="wrap"><a href="#top" aria-label="Back to top"><img src="assets/ce-advisory-colour.svg" alt="CE Advisory" width="194" height="45"></a><p>Construction Edge Advisory<br><span>Independent thinking. Practical progress.</span></p><small>© 2026 Construction Edge Advisory</small></footer>
+</body></html>

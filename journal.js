@@ -69,7 +69,7 @@ function renderCards(container, posts) {
   if (!posts.length) container.append(el('p','feed-message','New essays will appear here as David publishes them.'));
 }
 function renderArticle(post) {
-  document.title = post.title + ' | The Construction Edge';
+  document.title = post.title + ' | Construction Edge';
   document.querySelector('#article-title').textContent = post.title;
   document.querySelector('#article-deck').textContent = post.description;
   document.querySelector('#article-author').textContent = post.author;

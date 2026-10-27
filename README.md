@@ -2,7 +2,7 @@
 
 Production website for Construction Edge Advisory. It is a static Cloudflare Pages site.
 
-The homepage shows four essay cards from the latest saved snapshot of David Chandler’s Substack, [The Construction Edge](https://theconstructionedge.substack.com). Each card links to that essay on Substack. There is no on-site article reader. `/journal` and `/journal.html` redirect to the Substack archive. `/article.html` redirects to `/article`, which sends a valid post slug to the matching Substack essay or otherwise to the archive.
+The homepage shows up to four essay cards from the latest saved snapshot of David Chandler’s Substack, [The Construction Edge](https://theconstructionedge.substack.com). Each card links to that essay on Substack. There is no on-site article reader. `/journal` and `/journal.html` redirect to the Substack archive. `/article.html` redirects to `/article`, which sends a valid post slug to the matching Substack essay or otherwise to the archive.
 
 `/api/journal` only reads the `latest` record from the `JOURNAL` KV binding. A page visit does not fetch Substack. The scheduled Worker in `maintenance/journal-sync/` refreshes the public RSS feed and replaces that snapshot only when the feed validates. The homepage renders cards from the snapshot. Essays outside the saved feed stay on the Substack archive.
 

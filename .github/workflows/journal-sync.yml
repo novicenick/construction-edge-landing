@@ -22,7 +22,7 @@ jobs:
         shell: bash
         run: |
           python3 - <<'PYTHON'
-          import base64, datetime, email.utils, json, os, sys, time, urllib.request, urllib.error
+          import base64, datetime, email.utils, json, os, sys, time, urllib.request, urllib.error, subprocess, tempfile
           import xml.etree.ElementTree as ET
           
           REPO = os.environ['GITHUB_REPOSITORY']
@@ -89,13 +89,20 @@ jobs:
                   print('Waiting until the upstream retry window ends; existing articles retained.')
                   return
               try:
-                  req = urllib.request.Request(FEED, headers={'Accept': 'application/rss+xml, application/xml',
-                      'User-Agent': 'ConstructionEdgeJournal/1.0 (+https://constructionedge.com.au)'})
-                  with urllib.request.urlopen(req, timeout=30) as response:
-                      data = response.read(LIMIT + 1)
-                      if len(data) > LIMIT:
+                  with tempfile.TemporaryDirectory() as temp:
+                      result = subprocess.run(['curl', '--silent', '--show-error', '--max-time', '30',
+                          '--max-filesize', str(LIMIT), '--dump-header', temp + '/headers',
+                          '--output', temp + '/feed', '--write-out', '%{http_code}', FEED], capture_output=True, text=True)
+                      status = int(result.stdout) if result.stdout.isdigit() else 0
+                      if result.returncode != 0 or status != 200:
+                          from email.parser import Parser
+                          headers = Parser().parsestr(open(temp + '/headers').read().split('\n', 1)[-1])
+                          print('RSS response status:', status, 'challenge:', headers.get('cf-mitigated', 'none'))
+                          raise urllib.error.HTTPError(FEED, status, 'RSS request failed', headers, None)
+                      with open(temp + '/feed', encoding='utf-8') as feed:
+                          xml = feed.read(LIMIT + 1)
+                      if len(xml.encode()) > LIMIT:
                           raise ValueError('Feed exceeds size limit')
-                      xml = data.decode('utf-8')
                   count = validate(xml)
                   save({'xml': xml, 'fetchedAt': now, 'count': count, 'failures': 0}, sha)
                   print(f'Published a validated snapshot containing {count} articles.')

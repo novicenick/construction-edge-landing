@@ -1,7 +1,6 @@
 const headers = {
   'Content-Type': 'application/json; charset=utf-8',
   'X-Content-Type-Options': 'nosniff',
-  'X-Robots-Tag': 'noindex, nofollow, noarchive',
   'Cache-Control': 'no-store',
   'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'",
 };
